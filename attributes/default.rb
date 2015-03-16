@@ -10,6 +10,8 @@ when 'debian'
   when '7'
     default['aerospike']['tarball_url'] = 'http://aerospike.com/download/server/latest/artifact/debian7'
   end
+when 'centos', 'redhat', 'scientific', 'amazon', 'suse'
+  default['aerospike']['tarball_url'] = 'http://aerospike.com/download/server/latest/artifact/el6'
 else
   default['aerospike']['tarball_url'] = 'http://aerospike.com/download/server/latest/artifact/tgz'
 end
