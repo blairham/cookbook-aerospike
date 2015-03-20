@@ -1,4 +1,5 @@
 default['aerospike']['version'] = '3.5.4'
+default['aerospike']['config_path'] = '/etc/aerospike/aerospike.conf'
 
 case node['platform']
 when 'ubuntu'
@@ -19,7 +20,9 @@ when 'centos', 'redhat', 'scientific', 'amazon', 'suse'
 else
   default['aerospike']['tarball_url'] = 'http://aerospike.com/download/server/latest/artifact/tgz'
   default['aerospike']['checksum'] = '1d24750ce91d9e92d7f08fbe9b7c4a1dab80fea53cd3116a8a7e2d8e1f3d4000'
+  default['aerospike']['config_path'] = nil
 end
 
 default['aerospike']['base_name'] = 'aerospike-'
 default['aerospike']['artifact_type'] = 'tgz'
+default['aerospike']['namespaces'] = [{ name: 'test' }, { name: 'bar' }]
