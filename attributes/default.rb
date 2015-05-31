@@ -1,25 +1,25 @@
-default['aerospike']['version'] = '3.5.4'
+default['aerospike']['version'] = '3.5.9'
 default['aerospike']['config_path'] = '/etc/aerospike/aerospike.conf'
 
 case node['platform']
 when 'ubuntu'
-  default['aerospike']['tarball_url'] = 'http://aerospike.com/download/server/latest/artifact/ubuntu12'
-  default['aerospike']['checksum'] = '12f461810d58dba97d0a44e588275152af288716e5bff64b4aaa631220c94033'
+  default['aerospike']['tarball_url'] = "http://aerospike.com/download/server/#{node['aerospike']['version']}/artifact/ubuntu12"
+  default['aerospike']['checksum'] = '29b5e592349811738269a2b79b578b723942c0ef2682b2c514fbdda6df9ba621'
 when 'debian'
   case node['platform_version']
   when '6'
-    default['aerospike']['tarball_url'] = 'http://aerospike.com/download/server/latest/artifact/debian6'
-    default['aerospike']['checksum'] = '006b3e3293256231808423f80111bd0ed50518b13ff2ec072d29ba10fad249c8'
+    default['aerospike']['tarball_url'] = "http://aerospike.com/download/server/#{node['aerospike']['version']}/artifact/debian6"
+    default['aerospike']['checksum'] = '41d2b43b862470c99a5b71d98a6089a61bc32e14685a052d3d0191e4d9f1af93'
   when '7'
-    default['aerospike']['tarball_url'] = 'http://aerospike.com/download/server/latest/artifact/debian7'
-    default['aerospike']['checksum'] = '80c23ea858278419297c51d8fd924ac64d7b62684b24334440c16725ba856e45'
+    default['aerospike']['tarball_url'] = "http://aerospike.com/download/server/#{node['aerospike']['version']}/artifact/debian7"
+    default['aerospike']['checksum'] = '2dacf055d49e62d8be0a2508c11334a52a95982dc8389a7a93d36019d600c32c'
   end
 when 'centos', 'redhat', 'scientific', 'amazon', 'suse'
-  default['aerospike']['tarball_url'] = 'http://aerospike.com/download/server/latest/artifact/el6'
-  default['aerospike']['checksum'] = 'f2da01a29a09b289575f6e06f2adf8a0ae2db8209a1a7749042d009b612bb302'
+  default['aerospike']['tarball_url'] = "http://aerospike.com/download/server/#{node['aerospike']['version']}/artifact/el6"
+  default['aerospike']['checksum'] = 'cf4d41edc7215dd190b3590f1273b483c8be6e692c1a1d0dd55951234eafa75c'
 else
-  default['aerospike']['tarball_url'] = 'http://aerospike.com/download/server/latest/artifact/tgz'
-  default['aerospike']['checksum'] = '1d24750ce91d9e92d7f08fbe9b7c4a1dab80fea53cd3116a8a7e2d8e1f3d4000'
+  default['aerospike']['tarball_url'] = "http://aerospike.com/download/server/#{node['aerospike']['version']}/artifact/tgz"
+  default['aerospike']['checksum'] = 'c78622acc1e2bcd9e6d914bf19819b40d69f454827a1e15fe68e24b0788f8c5a'
   default['aerospike']['config_path'] = nil
 end
 

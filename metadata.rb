@@ -4,7 +4,7 @@ maintainer_email 'v@gor.io'
 license          'Apache 2.0'
 description      'Installs/Configures aerospike'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.0.14'
+version          '0.0.15'
 
 %w[debian ubuntu centos redhat fedora scientific suse amazon].each do |os|
   supports os
